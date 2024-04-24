@@ -1,6 +1,6 @@
 # kata-dungeons-dragons
 
-**Kata 34 per l'especialitat fullstackPHP 24-4-24**
+**Kata 34 per l'especialitat fullstackPHP 25-4-24**
 
 Estem creant part de la lògica d'un videojoc de rol-acció i, per això necessitem programar els tipus de jugador que podrem tenir. Qualsevol jugador té un nickname, una
 posició horitzontal(x) i una altra vertical(y). Les posicions es representen per nombres entre el 0 i el 9. Cada jugador es pot moure en una d'aquestes 4 direccions:
