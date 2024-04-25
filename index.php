@@ -4,11 +4,8 @@ include_once('class/Warrior.php');
 include_once('class/Archer.php');
 include_once('class/Mage.php');
 
-$warrior = new Warrior();
-$mage = new Mage();
-$archer = new Archer();
-
-
-
+$warrior = new Warrior("Cecil");
+$mage = new Mage("Vivi");
+$archer = new Archer("Freya");
 
 ?>
