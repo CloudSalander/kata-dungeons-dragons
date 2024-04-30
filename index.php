@@ -13,6 +13,9 @@ for($i = 0; $i <= 9; ++$i) {
 }
 
 $mage = new Mage("Vivi");
+$mage->useSpell("Fireball");
+$mage->addSpell("Fireball");
+$mage->useSpell("Fireball");
 
 $archer = new Archer("Freya","Windforce",5);
 
