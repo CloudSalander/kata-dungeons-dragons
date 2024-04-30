@@ -5,7 +5,7 @@ class Archer extends Player {
     private int $arrows_qty;
 
     public function __construct(string $nickname, string $bow, int $arrows_qty) {
-        parent::_construct($nickname);
+        parent::__construct($nickname);
         $this->bow = $bow;
         $this->arrows_qty = $arrows_qty;
     }
@@ -13,7 +13,7 @@ class Archer extends Player {
     public function shoot(): void {
         if ($this->arrows_qty > 0) {
             echo "I shoot an arrow!".PHP_EOL;
-            --$this->arrow_qty;
+            --$this->arrows_qty;
         }
         else echo "Can't shoot! No arrows!".PHP_EOL;
     }
