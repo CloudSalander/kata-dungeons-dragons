@@ -11,6 +11,11 @@ abstract class Player {
     protected string $nickname;
     protected int $pos_x;
     protected int $pos_y;
+    //TODO: This ones are more a "Board" responsability but we don't have Board by now.
+    private const VERTICAL_MAX = 9;
+    private const VERTICAL_MIN = 0;
+    private const HORIZONTAL_MAX = 9;
+    private const HORIZONTAL_MIN = 0;
 
     public function __construct(string $nickname) {
         $this->nickname = $nickname;
@@ -35,16 +40,16 @@ abstract class Player {
     }
 
     private function checkMoveUp(MoveDirection $direction, int $step): bool {
-        return $direction === MoveDirection::UP && ($this->pos_y + $step) <= 9;
+        return $direction === MoveDirection::UP && ($this->pos_y + $step) <= Player::VERTICAL_MAX;
     }
     private function checkMoveDown(MoveDirection $direction, int $step): bool {
-        return $direction === MoveDirection::DOWN && ($this->pos_y - $step) > 0;
+        return $direction === MoveDirection::DOWN && ($this->pos_y - $step) > Player::VERTICAL_MIN;
     }
     private function checkMoveRight(MoveDirection $direction,int $step): bool {
-        return $direction === MoveDirection::RIGHT && ($this->pos_x + $step) <= 9;
+        return $direction === MoveDirection::RIGHT && ($this->pos_x + $step) <= Player::HORIZONTAL_MAX;
     }
     private function checkMoveLeft(MoveDirection $direction,int $step): bool {
-        return $direction === MoveDirection::LEFT && ($this->pos_x - $step) > 0;
+        return $direction === MoveDirection::LEFT && ($this->pos_x - $step) > Player::HORIZONTAL_MIN;
     }
 
     public function getX(): int {
