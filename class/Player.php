@@ -23,15 +23,28 @@ abstract class Player {
     }
 
     protected function move(MoveDirection $direction, int $step): void {
-        if($direction === MoveDirection::UP && ($this->pos_y + $step) <= 9) $this->pos_y += $step;
-        else if($direction === MoveDirection::DOWN && ($this->pos_y - $step) > 0) $this->pos_y -= $step;
-        else if($direction === MoveDirection::RIGHT && ($this->pos_x + $step) <= 9) $this->pos_x += $step;
-        else if($direction === MoveDirection::LEFT && ($this->pos_x - $step) > 0) $this->pos_x -= $step;
+        if($this->checkMoveUp($direction,$step)) $this->pos_y += $step;
+        else if($this->checkMoveDown($direction,$step)) $this->pos_y -= $step;
+        else if($this->checkMoveRight($direction,$step)) $this->pos_x += $step;
+        else if($this->checkMoveLeft($direction,$step)) $this->pos_x -= $step;
         else {
             echo "Can't move on ".$direction->value." direction!".PHP_EOL;
             return;
         }
         echo $this->nickname." now its in X: ".$this->pos_x." and Y: ".$this->pos_y.PHP_EOL;
+    }
+
+    private function checkMoveUp(MoveDirection $direction, int $step): bool {
+        return $direction === MoveDirection::UP && ($this->pos_y + $step) <= 9;
+    }
+    private function checkMoveDown(MoveDirection $direction, int $step): bool {
+        return $direction === MoveDirection::DOWN && ($this->pos_y - $step) > 0;
+    }
+    private function checkMoveRight(MoveDirection $direction,int $step): bool {
+        return $direction === MoveDirection::RIGHT && ($this->pos_x + $step) <= 9;
+    }
+    private function checkMoveLeft(MoveDirection $direction,int $step): bool {
+        return $direction === MoveDirection::LEFT && ($this->pos_x - $step) > 0;
     }
 
     public function getX(): int {
