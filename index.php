@@ -8,8 +8,7 @@ $warrior = new Warrior("Cecil","Doombringer");
 
 $warrior->attack();
 for($i = 0; $i <= 9; ++$i) {
-    $warrior->run(MoveDirection::LEFT);
-    echo $warrior->getY().PHP_EOL;
+    $warrior->walk(MoveDirection::UP);
 }
 
 $mage = new Mage("Vivi");
