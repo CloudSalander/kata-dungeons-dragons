@@ -9,9 +9,9 @@ enum MoveDirection: string {
 }
 
 abstract class Player {
-    private string $nickname;
-    private int $pos_x;
-    private int $pos_y;
+    protected string $nickname;
+    protected int $pos_x;
+    protected int $pos_y;
 
     public function __construct(string $nickname) {
         $this->nickname = $nickname;
